@@ -1,4 +1,6 @@
 module ApplicationHelper
+  require 'active_support/core_ext/string'
+
   def default_avatar(user)
     if user.name.present?
       if user.name[0].downcase < 'h'
@@ -16,10 +18,10 @@ module ApplicationHelper
   end
 
   def pluralize_comments(comments)
-    "#{comments.count} comments"
+    "#{comments.count} comment".pluralize(comments.count)
   end
 
   def pluralize_tips(tips)
-    "#{tips.count} tips"
+    "#{tips.count} tips".pluralize(tips.count)
   end
 end
