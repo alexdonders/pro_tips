@@ -11,11 +11,11 @@
 #         name: 'Name'
 #         avatar: 'Avatar'
 
-en:
-  login: 'Log in'
-  signup: 'Sign up'
-  searchterm: 'Search term'
-  searchbutton: 'Search'
-  cancelbutton: 'Cancel'
-  updatebutton: 'Update'
-  user: 'User'
+fr:
+  login: 'Identifier'
+  signup: 'Inscrire'
+  searchterm: 'Terme de recherche'
+  searchbutton: 'Chercher'
+  cancelbutton: 'Annuler'
+  updatebutton: 'Mise à jour'
+  user: 'Usager'

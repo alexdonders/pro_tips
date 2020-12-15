@@ -19,7 +19,7 @@
   </fieldset>
 
   <fieldset class="form-group row">
-    <%= form.label 'User', for: 'tip_user_id', class: 'col-md-2 col-form-label' %>
+    <%= form.label translate('user'), for: 'tip_user_id', class: 'col-md-2 col-form-label' %>
     <div class="col-md-10">
       <%= form.collection_select(:user_id, User.all, :id, :name, {}, { class: 'form-control' }) %>
     </div>
@@ -30,7 +30,7 @@
       <%= form.submit class: 'btn btn-primary btn-block mb-2' %>
     </div>
     <div class="col-md-2">
-      <%= link_to 'Cancel', account_path, class: 'btn btn-light btn-block' %>
+      <%= link_to translate('cancel'), account_path, class: 'btn btn-light btn-block' %>
     </div>
   </div>
 <% end %>
