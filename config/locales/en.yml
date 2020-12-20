@@ -13,9 +13,12 @@
 
 en:
   login: 'Log in'
+  logout: 'Log out'
   signup: 'Sign up'
   searchterm: 'Search term'
   searchbutton: 'Search'
   cancelbutton: 'Cancel'
   updatebutton: 'Update'
   user: 'User'
+  users: 'Users'
+  account: 'Account'

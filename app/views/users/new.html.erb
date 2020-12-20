@@ -1,5 +1,5 @@
 <div class="col-md-6 offset-md-3">
-  <h1 class="text-center display-4 m-5">Sign up</h1>
+  <h1 class="text-center display-4 m-5"><%= translate('signup') %></h1>
   <%= form_for(@user) do |form| %>
     <% if @user.errors.any? %>
       <%= render partial: 'model_errors', locals: { model: @user } %>
@@ -11,9 +11,15 @@
         <%= form.email_field :email, class: 'form-control', placeholder: 'e.g. me@epfl.ch' %>
       </div>
     </div>
+    <div class="form-group row">
+      <%= form.label(:password, class: 'col-sm-2 col-form-label')%>
+      <div class="col-sm-10">
+        <%= form.password_field(:password, class: 'form-control')%>
+      </div>
+    </div>
      <div class="form-group row">
        <div class="col-sm-10 offset-sm-2">
-         <%= form.submit 'Sign up', class: 'btn btn-primary btn-block' %>
+         <%= form.submit translate('signup'), class: 'btn btn-primary btn-block' %>
        </div>
      </div>
   <% end %>

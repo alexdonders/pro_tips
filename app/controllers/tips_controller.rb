@@ -1,6 +1,7 @@
 class TipsController < ApplicationController
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
-
+  before_action :ensure_authenticated,   only: [:new, :create, :edit, :update]
+  
   def index
     @search_term = params[:q]
     logger.info("Search completed using #{@search_term}.")

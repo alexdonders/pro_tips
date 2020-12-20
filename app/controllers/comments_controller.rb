@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_tip
+  before_action :ensure_authenticated
 
   def create
     @comment = Comment.new(comment_params)

@@ -11,7 +11,7 @@ module ApplicationHelper
       return USERNAME_NONE unless user.name.present?
 
       letter = user.name[0].downcase
-      
+
       case letter
       when letter < 'h'
         USERNAME_LT_H
@@ -32,4 +32,5 @@ module ApplicationHelper
   def pluralize_tips(tips)
     "#{tips.count} tips".pluralize(tips.count)
   end
+
 end
