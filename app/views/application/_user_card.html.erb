@@ -8,8 +8,8 @@
       <% end %>
     </div>
   </div>
-  <% if user.avatar_url.present? %>
-    <%= image_tag user.avatar_url, class: 'card-img-top', alt: "Avatar for #{user.name}" %>
+  <% if user.avatar.present? %>
+    <%= image_tag user.avatar, class: 'card-img-top', alt: "Avatar for #{user.name}" %>
   <% else %>
     <%= image_tag default_avatar(user), class: 'card-img-top', alt: "Avatar for #{user.name}" %>
   <% end %>

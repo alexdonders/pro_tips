@@ -31,12 +31,10 @@
       </div>
     </fieldset>
 
-    <fieldset class="form-group row">
-      <%= form.label :avatar_url, class: 'col-md-2 col-form-label' %>
-      <div class="col-md-10">
-        <%= form.text_field :avatar_url, class: 'form-control' %>
-      </div>
-    </fieldset>
+    <div class="form-group row">
+      <%= form.label(:avatar, class: 'col-md-2 col-form-label')%>
+      <%= form.file_field(:avatar, class: 'form-control')%>
+    </div>
 
     <fieldset class="form-group row d-flex flex-row-reverse">
       <div class="col-md-10">

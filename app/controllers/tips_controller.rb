@@ -22,6 +22,7 @@ class TipsController < ApplicationController
 
   def create
     @tip = Tip.new(tip_params)
+    @tip.user = current_user
 
     respond_to do |format|
       if @tip.save
