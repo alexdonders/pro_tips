@@ -10,10 +10,12 @@
 <div class="card mt-4">
   <div class="card-header d-flex justify-content-start">
     <h3><%= @tip.title %></h3>
-    <% if(can_edit?(@tip))%>
-    <div>
-      <%= link_to 'Edit', edit_tip_path(@tip), class: 'btn btn-outline-secondary ml-3' %>
-    </div>
+    <% if(logged_in?) %>
+      <% if(can_edit?(@tip))%>
+      <div>
+        <%= link_to 'Edit', edit_tip_path(@tip), class: 'btn btn-outline-secondary ml-3' %>
+      </div>
+      <% end %>
     <% end %>
   </div>
 
@@ -33,6 +35,7 @@
         </blockquote>
       <% end %>
     </div>
+    <% if(logged_in?) %>
     <p class="text-muted">Add your own comment</p>
     <%=
       # Notice how #build is used here to instantiate a new empty Comment to be
@@ -47,6 +50,7 @@
       <fieldset class="d-flex justify-content-end">
         <%= form.submit class: 'btn btn-primary' %>
       </fieldset>
+    <% end %>
     <% end %>
   </div>
 </div>

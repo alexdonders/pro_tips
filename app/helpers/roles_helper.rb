@@ -10,6 +10,7 @@ module RolesHelper
   def can_manage_users?
     case(current_user.role)
     when 'admin' then true
+    else false
     end
   end
 end
