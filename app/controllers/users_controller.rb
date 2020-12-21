@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  include RolesHelper
+  before_action :set_user,                  only: [:show, :edit, :update, :destroy]
+  before_action :authorize_to_edit_user,    only: [:index, :edit, :update, :destroy]
 
   def index
     @users = User.all.page(params[:page])
@@ -63,5 +65,9 @@ class UsersController < ApplicationController
 
     def edit_user_params
       params.require(:user).permit(:email, :name, :avatar_url, :role)
+    end
+
+    def authorize_to_edit_user
+      redirect_to(account_path) unless(can_manage_users?)
     end
 end

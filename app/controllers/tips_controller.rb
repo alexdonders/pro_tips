@@ -1,7 +1,9 @@
 class TipsController < ApplicationController
-  before_action :set_tip, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_authenticated,   only: [:new, :create, :edit, :update]
-  
+  include RolesHelper
+  before_action :set_tip,                 only: [:show, :edit, :update, :destroy]
+  before_action :ensure_authenticated,    only: [:new, :create, :edit, :update]
+  before_action :authorize_to_edit_tip,   only: [:edit, :update, :destroy]
+
   def index
     @search_term = params[:q]
     logger.info("Search completed using #{@search_term}.")
@@ -65,5 +67,9 @@ class TipsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
       params.require(:tip).permit(:title, :body, :user_id)
+    end
+
+    def authorize_to_edit_tip
+      redirect_to(account_path) unless(can_edit?(@tip))
     end
 end

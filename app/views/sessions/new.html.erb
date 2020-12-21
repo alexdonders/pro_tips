@@ -1,7 +1,11 @@
 <div class="col-md-6 offset-md-3">
   <h1 class="text-center display-4 m-5"><%= translate('login') %></h1>
-    <% if @user.errors.any? %>
-      <%= render(partial: 'model_errors', locals: { model: @user }) %>
+    <% if(flash.any?) %>
+    <div class="message-container">
+      <% flash.each do |name, message| %>
+        <div class="message <%= name %>"><%= message %></div>
+      <% end %>
+    </div>
     <% end %>
     <%= form_tag(sessions_path) do %>
       <div class="form-group row">

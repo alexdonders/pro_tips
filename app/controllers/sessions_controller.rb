@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         redirect_to account_tips_path
     else
       flash[:alert] = 'Email or password invalid. Please try again.'
-      render 'session#new'
+      render 'new'
     end
   end
 
