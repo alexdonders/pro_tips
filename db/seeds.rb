@@ -16,9 +16,9 @@ This is just basic "newline" markers and won't convert to new lines in HTML, whi
 of <br /> or more appropriate markup.)
 
 
-florian = User.create!(email: 'florian@extensionschool.ch', name: 'Florian')
-sara    = User.create!(email: 'sara@extensionschool.ch',    name: 'Sara')
-linda   = User.create!(email: 'linda@extensionschool.ch',   name: 'Linda')
+florian = User.create!(email: 'florian@extensionschool.ch', name: 'Florian', password: 'password')
+sara    = User.create!(email: 'sara@extensionschool.ch',    name: 'Sara', password: 'password')
+linda   = User.create!(email: 'linda@extensionschool.ch',   name: 'Linda', password: 'password')
 
 Tip.create!(title: 'Use #name on a class in Ruby',
             body:  'Using Class.name returns a String representing the name of a class!  E.g. Integer.name returns "Integer" and ApplicationController.name returns "ApplicationController"',
@@ -67,6 +67,6 @@ Tip.create!(title: 'Just experiment!',
             body:  "The great thing about writing software is that it's easy to try things out and change them before submitting it for a production deployment.  I've found that taking a break and coming back to a difficult programming problem really helps too.",
             user:  linda)
 
-Comment.create!(body: 'Hm, thanks for the tip!' test, user: florian, tip: Tip.first)
-Comment.create!(body: 'Hm, thanks for the tip!' test, user: sara, tip: Tip.second)
-Comment.create!(body: 'Hm, thanks for the tip!' test, user: linda, tip: Tip.third)
+Comment.create!(body: 'Hm, thanks for the tip!', user: florian, tip: Tip.first)
+Comment.create!(body: 'Hm, thanks for the tip!', user: sara, tip: Tip.second)
+Comment.create!(body: 'Hm, thanks for the tip!', user: linda, tip: Tip.third)
