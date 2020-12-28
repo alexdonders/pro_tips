@@ -16,7 +16,7 @@ This is just basic "newline" markers and won't convert to new lines in HTML, whi
 of <br /> or more appropriate markup.)
 
 
-florian = User.create!(email: 'florian@extensionschool.ch', name: 'Florian', password: 'password')
+florian = User.create!(email: 'florian@extensionschool.ch', name: 'Florian', password: 'password', role: 'admin')
 sara    = User.create!(email: 'sara@extensionschool.ch',    name: 'Sara', password: 'password')
 linda   = User.create!(email: 'linda@extensionschool.ch',   name: 'Linda', password: 'password')
 
