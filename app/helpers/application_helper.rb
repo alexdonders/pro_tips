@@ -14,11 +14,11 @@ module ApplicationHelper
 
       case letter
       when letter < 'h'
-        USERNAME_LT_H
+        return USERNAME_LT_H
       when letter < 'n'
-        USERNAME_LT_N
+        return USERNAME_LT_N
       when letter < 'u'
-        USERNAME_LT_U
+        return USERNAME_LT_U
       else
         USERNAME_ELSE
       end
