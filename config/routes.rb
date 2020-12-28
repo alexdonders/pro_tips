@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
     resources :sessions, only: [:new, :create, :destroy]
 
-    resources :users, only: [:show, :new, :create, :edit, :update] do
+    resources :users do
       resources :favourites
     end
 
