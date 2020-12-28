@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
     resources :sessions, only: [:new, :create, :destroy]
 
+    resources :users, only: [:show, :new, :create, :edit, :update] do
+      resources :favourites
+    end
+
     namespace :account do
       resources :tips, only: [:index]
     end
@@ -16,9 +20,6 @@ Rails.application.routes.draw do
     resources :tips do
       resources :comments, only: [:create]
     end
-
-    resources :sessions, only: [:new, :create, :destroy]
-    resources :users
 
     get 'login',  to: 'sessions#new'
     get 'logout', to: 'sessions#destroy'
