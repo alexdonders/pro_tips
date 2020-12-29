@@ -13,12 +13,9 @@ module ApplicationHelper
       letter = user.name[0].downcase
 
       case letter
-      when letter < 'h'
-        return USERNAME_LT_H
-      when letter < 'n'
-        return USERNAME_LT_N
-      when letter < 'u'
-        return USERNAME_LT_U
+      when letter..'h' then USERNAME_LT_H
+      when letter..'n' then USERNAME_LT_N
+      when letter..'u' then USERNAME_LT_U
       else
         USERNAME_ELSE
       end

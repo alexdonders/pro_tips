@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   include RolesHelper
+  include ApplicationHelper
   before_action :set_user,                  only: [:show, :edit, :update, :destroy]
   before_action :authorize_to_edit_user,    only: [:index, :edit, :update, :destroy]
 
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         @user.name = @user.email
+        @user.avatar = default_avatar(@user)
         @user.save!
         # In this format call, the flash message is being passed directly to
         # redirect_to().  It's a caonvenient way of setting a flash notice or
@@ -38,6 +40,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
+        @user.avatar = default_avatar(@user) unless(@user.avatar_url.present?)
         # In this format call, the flash message is being passed directly to
         # redirect_to().  It's a caonvenient way of setting a flash notice or
         # alert without referencing the flash Hash explicitly.
