@@ -1,6 +1,6 @@
 <%= link_to user_path(user) do %>
   <% if user.avatar_url.present? %>
-    <img src="<%= user.avatar_url %>" class="avatar avatar-xs rounded-circle" />
+    <%= image_tag user.avatar_url, class: 'avatar-xs rounded-circle' %><%= user.name %>
   <% else %>
     <%= image_tag default_avatar(user), class: 'avatar-xs rounded-circle' %><%= user.name %>
   <% end %>
