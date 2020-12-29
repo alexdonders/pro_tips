@@ -71,6 +71,6 @@ class UsersController < ApplicationController
     end
 
     def authorize_to_edit_user
-      redirect_to(account_path) unless(can_manage_users?)
+      redirect_to(account_path) unless(can_manage_users? || is_owner?(@user))
     end
 end

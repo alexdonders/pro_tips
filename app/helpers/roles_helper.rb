@@ -13,4 +13,11 @@ module RolesHelper
     else false
     end
   end
+
+  def is_owner?(user)
+    case user.id
+    when current_user.id then true
+    else false
+    end
+  end
 end
